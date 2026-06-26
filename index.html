@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taiday0の公式サイト</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --text-bright: #ffffff;
+            --accent-color: #30363d;
+            --card-bg: #161b22;
+            --primary-blue: #58a6ff;
+            --btn-hover: #1f6feb;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        /* ヒーローセクション */
+        header {
+            background: linear-gradient(135deg, #161b22 0%, #21262d 100%);
+            color: var(--text-bright);
+            text-align: center;
+            padding: 4rem 1rem;
+            border-bottom: 1px solid var(--accent-color);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            color: var(--text-bright);
+            /* 明滅アニメーションを適用（4秒かけて無限ループ） */
+            animation: neon-glow 4s ease-in-out infinite alternate;
+        }
+        
+        /* ゆっくり明滅するネオンエフェクトの定義 */
+        @keyframes neon-glow {
+            0% {
+                text-shadow: 0 0 4px #58a6ff, 0 0 10px #58a6ff, 0 0 18px #0366d6;
+            }
+            100% {
+                text-shadow: 0 0 12px #58a6ff, 0 0 25px #58a6ff, 0 0 40px #0366d6, 0 0 60px #0366d6;
+            }
+        }
+
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+            color: var(--text-bright);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.3rem;
+            margin-top: 3rem;
+        }
+        /* プロフィール */
+        .profile-box {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--accent-color);
+        }
+        /* 制作実績カード */
+        .works-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 650px) {
+            .works-grid { grid-template-columns: 1fr; }
+        }
+        .work-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+        }
+        .work-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .work-title {
+            color: var(--text-bright);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+        }
+        .work-desc {
+            font-size: 0.95rem;
+            color: #8b949e;
+            margin: 0 0 1.5rem 0;
+            flex-grow: 1;
+        }
+        .work-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--primary-blue);
+            color: #0d1117;
+            text-decoration: none;
+            padding: 0.7rem;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .work-btn:hover {
+            background-color: var(--btn-hover);
+            color: var(--text-bright);
+        }
+        /* スキル・タグ */
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .tag {
+            background: #21262d;
+            color: var(--primary-blue);
+            border: 1px solid var(--accent-color);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.9rem;
+            color: #8b949e;
+            margin-top: 4rem;
+            border-top: 1px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>taiday0の公式サイト</h1>
+        <p>HTML5ゲームデベロッパー / クリエイター</p>
+    </header>
+
+    <main>
+        <!-- プロフィールセクション -->
+        <section>
+            <h2>About Me</h2>
+            <div class="profile-box">
+                <p>はじめまして、taiday0です。GitHub Pagesを活用して、ブラウザで手軽に遊べるインディーズゲームの制作・公開を行っています。コードの仕組みを理解するため、フレームワークに頼らないシンプルな開発を心がけています。</p>
+            </div>
+        </section>
+
+        <!-- 制作実績セクション -->
+        <section>
+            <h2>Works</h2>
+            <div class="works-grid">
+                
+                <!-- シューティングゲーム -->
+                <div class="work-card">
+                    <div class="work-body">
+                        <div class="tags"><span class="tag">HTML5</span><span class="tag">JavaScript</span></div>
+                        <h3 class="work-title">シューティングゲーム</h3>
+                        <p class="work-desc">爽快感を重視したブラウザ向けシューティングゲーム。シンプルな操作性と、JavaScriptによるスムーズなオブジェクト描画を実装しています。</p>
+                        <a href="/shooting-game/" class="work-btn">ゲームをプレイする</a>
+                    </div>
+                </div>
+
+                <!-- パズルゲーム -->
+                <div class="work-card">
+                    <div class="work-body">
+                        <div class="tags"><span class="tag">HTML5</span><span class="tag">JavaScript</span></div>
+                        <h3 class="work-title">パズルゲーム</h3>
+                        <p class="work-desc">思考型ブラウザパズルゲーム。2次元配列を用いたロジック管理と、ユーザーフレンドリーなUI・操作性をHTMLとCSSで構築しました。</p>
+                        <a href="/puzzle-game/" class="work-btn">ゲームをプレイする</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 今後の展望 -->
+        <section>
+            <h2>Future Plans</h2>
+            <div class="profile-box">
+                <p>今後も2Dのゲームも作っていく予定です。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 taiday0. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
