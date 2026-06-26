@@ -34,19 +34,16 @@
             margin: 0;
             font-size: 2.5rem;
             letter-spacing: 1px;
-            color: var(--text-bright);
-            /* 明滅アニメーションを適用（4秒かけて無限ループ） */
-            animation: neon-glow 4s ease-in-out infinite alternate;
-        }
-        
-        /* ゆっくり明滅するネオンエフェクトの定義 */
-        @keyframes neon-glow {
-            0% {
-                text-shadow: 0 0 4px #58a6ff, 0 0 10px #58a6ff, 0 0 18px #0366d6;
-            }
-            100% {
-                text-shadow: 0 0 12px #58a6ff, 0 0 25px #58a6ff, 0 0 40px #0366d6, 0 0 60px #0366d6;
-            }
+            
+            /* 文字自体をきれいな虹色のグラデーションにする設定 */
+            background: linear-gradient(to right, #ff5555, #ff55ff, #58a6ff, #55ff55, #ffff55);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            
+            /* 複数の色の光を重ねて、文字の周りをカラフルに光らせる設定 */
+            filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.6)) 
+                    drop-shadow(0 0 15px rgba(255, 85, 255, 0.4));
         }
 
         header p {
