@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>taiday0の公式サイト</title>
+    <title>taiday0的公式サイト</title>
     <style>
         :root {
             --bg-color: #0d1117;
@@ -13,6 +13,7 @@
             --card-bg: #161b22;
             --primary-blue: #58a6ff;
             --btn-hover: #1f6feb;
+            --scratch-orange: #ffab19;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -22,6 +23,7 @@
             margin: 0;
             padding: 0;
         }
+        /* ヒーローセクション */
         header {
             background: linear-gradient(135deg, #161b22 0%, #21262d 100%);
             color: var(--text-bright);
@@ -33,10 +35,12 @@
             margin: 0;
             font-size: 2.5rem;
             letter-spacing: 1px;
+            /* 文字自体をきれいな虹色のグラデーションにする設定 */
             background: linear-gradient(to right, #ff5555, #ff55ff, #58a6ff, #55ff55, #ffff55);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
+            /* 複数の色の光を重ねて、文字の周りをカラフルに光らせる設定 */
             filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.6)) 
                     drop-shadow(0 0 15px rgba(255, 85, 255, 0.4));
         }
@@ -44,6 +48,20 @@
             margin: 0.5rem 0 0 0;
             font-size: 1.1rem;
             opacity: 0.8;
+        }
+        .scratch-header-btn {
+            display: inline-block;
+            background-color: var(--scratch-orange);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            transition: background-color 0.2s;
+        }
+        .scratch-header-btn:hover {
+            background-color: #e59310;
         }
         main {
             max-width: 900px;
@@ -57,12 +75,21 @@
             padding-bottom: 0.3rem;
             margin-top: 3rem;
         }
+        /* プロフィール */
         .profile-box {
             background: var(--card-bg);
             padding: 1.5rem;
             border-radius: 8px;
             border: 1px solid var(--accent-color);
         }
+        .profile-box a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        .profile-box a:hover {
+            text-decoration: underline;
+        }
+        /* 制作実績カード */
         .works-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -108,6 +135,7 @@
             background-color: var(--btn-hover);
             color: var(--text-bright);
         }
+        /* スキル・タグ */
         .tags {
             display: flex;
             gap: 0.5rem;
@@ -133,49 +161,73 @@
     </style>
 </head>
 <body>
+
     <header>
-        <h1>taiday0の公式サイト</h1>
+        <h1>taiday0的公式サイト</h1>
         <p>HTML5ゲームデベロッパー / クリエイター</p>
+        <a href="https://mit.edu" class="scratch-header-btn" target="_blank">🐱 Scratchプロフィールを見る</a>
     </header>
+
     <main>
+        <!-- プロフィールセクション -->
         <section>
             <h2>About Me</h2>
             <div class="profile-box">
-                <p>はじめまして、taiday0です。GitHub Pagesを活用して、ブラウザで手軽に遊べるインディーズゲームの制作・公開を行っています。</p>
+                <p>はじめまして、taiday0です。GitHub Pagesを活用して、ブラウザで手軽に遊べるインディーズゲームの制作・公開を行っています。コードの仕組みを理解するため、フレームワークに頼らないシンプルな開発を心がけています。</p>
+                <p>また、Scratchでは <a href="https://mit.edu" target="_blank">pianodemusic</a> としても活動しており、様々なミニゲームやプログラムを不定期に投稿しています！</p>
             </div>
         </section>
+
+        <!-- 制作実績セクション -->
         <section>
             <h2>Works</h2>
             <div class="works-grid">
+                
+                <!-- シューティングゲーム -->
                 <div class="work-card">
                     <div class="work-body">
-                        <div class="tags"><span class="tag">HTML5</span><span class="tag">JS</span></div>
+                        <div class="tags"><span class="tag">HTML5</span><span class="tag">JavaScript</span></div>
                         <h3 class="work-title">シューティングゲーム</h3>
-                        <p class="work-desc">軽量ブラウザゲーム</p>
-                        <a href="/shooting-game/" class="work-btn">プレイ</a>
+                        <p class="work-desc">スペックが低くても遊べるのを重視したブラウザ向けシューティングゲーム</p>
+                        <a href="/shooting-game/" class="work-btn">ゲームをプレイする</a>
                     </div>
                 </div>
+
+                <!-- パズルゲーム -->
                 <div class="work-card">
                     <div class="work-body">
-                        <div class="tags"><span class="tag">HTML5</span><span class="tag">JS</span></div>
+                        <div class="tags"><span class="tag">HTML5</span><span class="tag">JavaScript</span></div>
                         <h3 class="work-title">パズルゲーム</h3>
-                        <p class="work-desc">テトリス風パズル</p>
-                        <a href="/puzzle-game/" class="work-btn">プレイ</a>
+                        <p class="work-desc">ブラウザで簡単に遊べる、テトリス風のパズルゲーム</p>
+                        <a href="/puzzle-game/" class="work-btn">ゲームをプレイする</a>
                     </div>
                 </div>
+
+                <!-- ブロック崩しゲーム -->
                 <div class="work-card">
                     <div class="work-body">
-                        <div class="tags"><span class="tag">HTML5</span><span class="tag">JS</span></div>
+                        <div class="tags"><span class="tag">HTML5</span><span class="tag">JavaScript</span></div>
                         <h3 class="work-title">ブロック崩し</h3>
-                        <p class="work-desc">王道のブロック崩し</p>
-                        <a href="/Block-break/" class="work-btn">プレイ</a>
+                        <p class="work-desc">王道のブロック崩し。パドルを動かしてボールを打ち返し、すべてのブロックを崩す爽快なゲームです。</p>
+                        <a href="/Block-break/" class="work-btn">ゲームをプレイする</a>
                     </div>
                 </div>
+
+            </div>
+        </section>
+
+        <!-- 今後の展望 -->
+        <section>
+            <h2>Future Plans</h2>
+            <div class="profile-box">
+                <p>今後も2Dのゲームも作っていく予定です。</p>
             </div>
         </section>
     </main>
+
     <footer>
         <p>© 2026 taiday0. Hosted on GitHub Pages.</p>
     </footer>
+
 </body>
 </html>
